@@ -7,7 +7,18 @@
     <script src="loader.js"></script>
 </head>
 
-<body>   
+<body>
+    <button onclick="showLoaderFor3Seconds()" style="position: fixed;">Show loader for 3 seconds</button>
+    <div style="height: 400px;"></div>
+    <div style="height: 1000px;">You can scroll down and click a button. Screen and scrolling will be blocked.</div>
+    <script>
+        function showLoaderFor3Seconds() {
+            loader.show();
+            window.setTimeout(function () {
+                loader.hide();
+            }, 3000);
+        }
+    </script>
 </body>
 
 </html>

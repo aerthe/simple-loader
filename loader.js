@@ -14,16 +14,24 @@
         loaderWrapper.style.display = 'none';
     }
 
+    loader.toggle = function () {
+        var loaderWrapper = getLoaderWrapper();
+        if (loaderWrapper.style.display === 'none')
+            loader.show()
+        else
+            loader.hide();
+    }
+
     function getLoaderWrapper() {
-        var loader = document.getElementById("loader-wrapper");
-        if (!loader) {
-            loader = document.createElement('div');
-            loader.setAttribute("id", "loader-wrapper");
-            loader.style.display = 'none';
-            loader.innerHTML = html.trim();
-            document.querySelector("body").appendChild(loader);
+        var loaderWrapper = document.getElementById("loader-wrapper");
+        if (!loaderWrapper) {
+            loaderWrapper = document.createElement('div');
+            loaderWrapper.setAttribute("id", "loader-wrapper");
+            loaderWrapper.style.display = 'none';
+            loaderWrapper.innerHTML = html.trim();
+            document.querySelector("body").appendChild(loaderWrapper);
         }
-        return loader;
+        return loaderWrapper;
     }
 
     global.loader = loader;
