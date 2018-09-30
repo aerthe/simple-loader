@@ -16,10 +16,7 @@
 
     loader.toggle = function () {
         var loaderWrapper = getLoaderWrapper();
-        if (loaderWrapper.style.display === 'none')
-            loader.show()
-        else
-            loader.hide();
+        loaderWrapper.style.display === 'none' ? loader.show() : loader.hide();
     }
 
     function getLoaderWrapper() {
